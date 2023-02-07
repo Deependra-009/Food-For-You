@@ -1,0 +1,97 @@
+<app-other-pages-navbar></app-other-pages-navbar>
+<div class="main-cart-page">
+    <div class="cart-page-box">
+        <div class="cart-product-details">
+            <mat-card class="cart-pd-nofee-box">
+                <h1>Available Offer</h1>
+                <h3><mat-icon>sell</mat-icon>5% unlimited cashback on Credit Card</h3>
+            </mat-card>
+            <mat-card class="cart-pd-offer-box">
+                <h2>Yah!,No convience Fee</h2>
+            </mat-card>
+            <mat-card class="cart-pd-product-box">
+                <div class="cart-pd-pb-header">
+                    <mat-checkbox [(ngModel)]="SelectAllItem" (click)="selectAllItem()" class="example-margin"></mat-checkbox>
+                    <label>Total Items: <span>{{CartData.length}}</span></label>
+                    <ng-container>
+                        <button (click)="removeCard()" class="btn btn-outline-danger">Remove</button>
+                    </ng-container>
+                </div>
+                <mat-divider></mat-divider>
+                <div class="cart-pd-pb-body">
+                    <div class="cart-box" *ngFor="let item of CartData">
+
+                        <div class="cart-box1">
+                            <img src="./../../../assets/Images/1.png">
+                        </div>
+                        <div class="cart-box2">
+                            <div>
+                                <mat-checkbox  [(ngModel)]="item.checked" (click)="selectCurrentItem(item)" class="example-margin"></mat-checkbox>
+                            </div>
+                            <h1>{{item.name}}</h1>
+                            <h4>{{item.description}}</h4>
+                            <label>{{item.tag}}</label>
+                            <div class="cart-product-buttons">
+                                <label>{{item.total_price}}</label>
+                                <span>
+                                    <mat-icon [ngStyle]="{color:'green'}" (click)="increase(item)">add</mat-icon>
+                                    <label>{{item.quantity}}</label>
+                                    <mat-icon [ngStyle]="{color:'red'}" (click)="decrease(item)">remove</mat-icon>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <mat-card class="cart-product-price">
+            <div class="cpp-coupon">
+                <div class="cpp-p-header">Coupon</div>
+                <div class="cpp-p-body1">
+                    <span><mat-icon>sell</mat-icon>Apply Coupn</span>
+                    <span><button class="btn btn-outline-primary">Apply</button></span>
+                </div>
+                <div class="cpp-p-body2">
+                    <label>
+                        <span class="text-danger">Login</span>
+                        to get upto Rs 400 on first Order
+                    </label>
+
+                </div>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="cpp-price-details">
+                <div class="cpp-header">
+                    <label>PRICE DETAILS</label>
+                    <label>{{CartData.length}}<span>Items</span>
+                    </label>
+                </div>
+                <mat-divider></mat-divider>
+                <div *ngIf="noProductFound==false" class="cpp-price">
+                    <div class="price">
+                        <label>Total MRP</label>
+                        <label>Rs {{TotalPrice}}</label>
+                    </div>
+                    <div class="price">
+                        <label>Discount</label>
+                        <label>Rs 0</label>
+                    </div>
+                    <div class="price">
+                        <label>Tax+GST</label>
+                        <label>Rs 100</label>
+                    </div>
+                </div>
+                <mat-divider *ngIf="noProductFound==false"></mat-divider>
+                <div *ngIf="noProductFound==false" class="total-price">
+                    <label>Total Amount</label>
+                    <label>Rs {{TotalPrice+100}}</label>
+                </div>
+                <mat-divider *ngIf="noProductFound==false"></mat-divider>
+                <div *ngIf="noProductFound==false" class="cpp-place-order-button">
+                    <button routerLink="/payment-page" class="btn btn-danger">PLACE ORDER</button>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>
+<app-footer></app-footer>

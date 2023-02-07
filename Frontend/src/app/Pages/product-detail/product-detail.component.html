@@ -1,0 +1,117 @@
+<app-other-pages-navbar></app-other-pages-navbar>
+<div class="product-detail-box">
+    <div class="pd-box1">
+        <div class="pd-box2">
+            <div class="pd-box3-image ">
+                <img src={{RestaurantData.restaurant_images}}>
+            </div>
+            <div class="pd-box3-data ">
+                <div class="pd-name">
+                    <label>{{RestaurantData.restaurant_name}}</label>
+                </div>
+                <div class="pd-tags">
+                    <label>{{RestaurantData.restaurant_tags}}</label>
+                    <label>{{RestaurantData.restaurant_address}}</label>
+                </div>
+                <div class="pd-other-details">
+                    <div class="pd-od-rating">
+                        <label class="rating">{{RestaurantData.restaurant_review}} <mat-icon >star</mat-icon></label>
+                        <label style="font-size: 20px; ">{{RestaurantData.restaurant_rating}}+ Rating</label>
+                    </div>
+                    <div class="pd-od-time">
+                        <mat-icon>schedule</mat-icon>&nbsp;&nbsp;<span>{{RestaurantData.restaurant_delievery_time}}</span>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="pd-box3-offer ">
+                <img src="./../../../assets/Images/offerimg.png">
+            </div>
+
+        </div>
+    </div>
+    <div class="pd-recommended-box">
+        <div class="pd-r-box">
+            <div class="pd-r-box1 ">
+                <div *ngFor="let item of TagsData;let i=index" (click)="goToCard(i)" class="pd-r-box1-data">
+                    <label>{{item}}</label>
+                    
+                </div>
+                <hr class="hr-recommended">
+
+
+            </div>
+            <div class="pd-r-box2">
+
+                <div class="pd-r-box2-header">
+                    <label>{{ProductsData.length}} Items</label>
+                </div>
+                <div class="pd-r-box2-data">
+                    <mat-card *ngFor="let item of ProductsData;"    attr.id={{item.product_id}} class="box2-data">
+                        <div class="data-name">
+                            <div class="name-header">
+                                {{item.product_name}}
+                            </div>
+                            <div class="name-label">
+                                {{item.product_description}}
+                            </div>
+                            <div class="name-button">
+                                <label>{{item.product_price}}</label>
+                                <button *ngIf="item.presentInCart==false" (click)="addItem(item)" class="btn btn-primary">ADD</button>
+                                <button *ngIf="item.presentInCart==true" (click)="removeItem(item)" class="btn btn-danger">Remove</button>
+                            </div>
+                        </div>
+                        <div class="data-image">
+                            <img src={{item.product_image}}>
+                        </div>
+                    </mat-card>
+
+                </div>
+
+
+            </div>
+            <div class="pd-r-box3">
+                <div class="pd-r-box3-header">
+                    <h1>Cart</h1>
+                </div>
+                <div class="pd-r-box3-body">
+                    <ng-container *ngIf="cartItemPresent==false">
+                        <img class="cart-image" src="./../../../assets/Images/cart.png">
+                    </ng-container>
+                    <ng-container *ngIf="cartItemPresent">
+                        <div class="pd-r-box3-body-cart-data">
+                            <div *ngFor="let item of CartData;" class="cart-product-details">
+                                <div class="cart-pd-name">
+                                    <label>{{item.name}}</label>
+                                </div>
+                                <div class="cart-pd-price">
+                                    <span>
+                                        <mat-icon [ngStyle]="{color:'green'}" (click)="increase(item)">add</mat-icon>
+                                        <label>{{item.quantity}}</label>
+                                        <mat-icon [ngStyle]="{color:'red'}" (click)="decrease(item)">remove</mat-icon>
+                                    </span>
+                                    <div>
+                                        <label>{{item.total_price}}</label>
+                                    </div>
+                                </div>
+                                <div></div>
+                                
+                            </div>
+                        </div>
+                        <div class="pd-r-box3-total-price">
+                            <div class="tp-box-price">
+                                Subtotal: <span>{{TotalPrice}}/-</span>
+                                <h5>Extra charges may apply</h5>
+                            </div>
+                            <div class="tp-box-button">
+                                <button (click)="clearCart()" class="btn btn-danger">Clear</button>
+                                <button routerLink="/payment-page"lass="btn btn-success">Order</button>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

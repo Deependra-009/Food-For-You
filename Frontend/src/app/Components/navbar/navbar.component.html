@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-warning navbar-div">
+    <div class="container p-2 navbar-style-1">
+        <a class="navbar-brand" routerLink="/">Get the App</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+    <div class="navbar-style-2 collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="d-flex">
+            <li (click)="check()">
+                <a>Add Restaurant</a>
+            </li>
+            <li *ngIf="loginStatus==false">
+                <a routerLink="/register">Register</a>
+            </li>
+            <li *ngIf="loginStatus==false">
+                <a routerLink="/login">Login</a>
+            </li>
+            <li *ngIf="loginStatus==true">
+                <a (click)="loggedout()">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>

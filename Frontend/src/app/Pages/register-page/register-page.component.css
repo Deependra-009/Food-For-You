@@ -1,0 +1,163 @@
+.register-page {
+    width: 100%;
+    height: 90vh;
+    background: #f39d9c;
+    background: linear-gradient(90deg, #ec8c8a 0,#c4caef 58%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rp-box1 {
+    width: 50%;
+    height: 70vh;
+    background: rgba(255, 255, 255, .7);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+    display: flex;
+    border-radius: 30px 0px 30px 0px;
+}
+.rp-b1 {
+    width: 100%;
+}
+
+.rp-b1 img {
+    width: 100%;
+    height: 100%;
+}
+
+.rp-b2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* border: 2px solid black; */
+}
+
+.rp-b2 .b2-header {
+    width: 100%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    /* border: 1px solid black; */
+}
+
+.rp-b2 .b2-header label {
+    font-size: 35px;
+    font-weight: 400;
+}
+
+.rp-b2 .b2-inputbox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.rp-b2 .b2-inputbox form {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.rp-b2 .b2-inputbox form .email,
+.rp-b2 .b2-inputbox form .password,
+.rp-b2 .b2-inputbox form .submit {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+mat-form-field{
+    width: 100%;
+}
+.b2-otherway{
+    width: 100%;
+}
+.b2-otherway ul{
+    /* border: 2px solid black; */
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.b2-otherway ul li{
+    margin-bottom: 10px;
+    width: 40%;
+    font-size: 17px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 20px ;
+}
+.b2-otherway ul li:hover{
+    cursor: pointer;
+}
+.b2-otherway ul li i{
+    margin-right: 10px;
+}
+.b2-dont-have-account{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.b2-dont-have-account label{
+    font-size: 16px;
+    margin-right: 10px;
+}
+.b2-dont-have-account span{
+    font-size: 18px;
+    color: red;
+    font-weight: 500;
+}
+.b2-dont-have-account span:hover{
+    cursor: pointer;
+}
+
+.page2{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.page2 .page2-header{
+    margin-top: 2em;
+    width: 60%;
+    display: flex;
+    /* justify-content: center; */
+
+}
+.page2 .page2-header label{
+    font-size: 18px;
+    margin-right: 5px;
+}
+.page2 .page2-header span{
+    font-size: 18px;
+    font-weight: 500;
+    color: red;
+
+}
+.page2-inputbox{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 70px;
+    /* margin-top: -20px; */
+}
+.page2-inputbox form{
+    width: 60%;
+}
+.page2-inputbox form .submit{
+    margin-top: 20px;
+    width: 100%;
+}
+.page2-inputbox form .submit button{
+    width: 100%;
+}

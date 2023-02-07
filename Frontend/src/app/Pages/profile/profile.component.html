@@ -1,0 +1,43 @@
+<app-other-pages-navbar></app-other-pages-navbar>
+<div class="main-profile-page">
+    <mat-card class="profile-page">
+        <div class="pp-header">
+            <h1>Settings</h1>
+            <mat-divider></mat-divider>
+        </div>
+        <div class="pp-body">
+            <div class="pp-menubar">
+                <mat-action-list>
+                    <button mat-list-item routerLink="/profile-page">
+                        <mat-icon mat-list-icon>account_circle</mat-icon> My details
+                    </button>
+                    <button mat-list-item routerLink="/profile-page/order-page">
+                        <mat-icon mat-list-icon>sell</mat-icon> Orders
+                    </button>
+                    <button mat-list-item routerLink="/profile-page/edit-detail">
+                        <mat-icon mat-list-icon>edit</mat-icon> Edit Profile
+                    </button>
+                    <button mat-list-item routerLink="/profile-page/change-password">
+                        <mat-icon mat-list-icon>key</mat-icon> Password
+                    </button>
+                    <button mat-list-item routerLink="/admin/add-category">
+                        <mat-icon mat-list-icon>attach_money</mat-icon> Billing
+                    </button>
+                    <button mat-list-item routerLink="/profile-page/notification-page">
+                        <mat-icon mat-list-icon>notifications</mat-icon>Notification
+                    </button>
+                    <button mat-list-item routerLink="/admin/quizzes">
+                        <mat-icon mat-list-icon>favorite</mat-icon> Favourite
+                    </button>
+    
+            
+                </mat-action-list>
+            </div>
+            <div class="pp-page">
+                <router-outlet></router-outlet>
+    
+            </div>
+        </div>
+    </mat-card>
+</div>
+<app-footer></app-footer>

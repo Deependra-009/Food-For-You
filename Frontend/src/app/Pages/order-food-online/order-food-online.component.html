@@ -1,0 +1,83 @@
+<app-other-pages-navbar></app-other-pages-navbar>
+<div class="order-food-online-box-1">
+    <div class="box-inspiration-your-first-order">
+        <div class="inspiration-your-first-order-heading">
+            <label>Inspiration Your First Order Data</label>
+        </div>
+        <div class="inspiration-your-first-order">
+
+
+            <div routerLink="/product-search-page" *ngFor="let item of Inspiration_Your_First_Order_Data">
+                <img src={{item.source}}>
+                <label>{{item.name}}</label>
+            </div>
+
+
+
+
+        </div>
+    </div>
+    <div class="box-category-filter-box">
+        <div class="category">
+            <div class="category-heading">
+                <h1>9 Restaurant</h1>
+            </div>
+            <div class="category-filter-div">
+                <button (click)="sortByRelevance()" type="button" class="btn btn-primary">Relevance</button>
+                <button (click)="sortByDelieveryTime()" type="button" class="btn btn-primary">Delievery Time</button>
+                <button (click)="sortByRating()" type="button" class="btn btn-primary">Rating</button>
+                <button type="button" class="btn btn-primary">Pure Veg</button>
+                <button type="button" class="btn btn-primary">Cuisine</button>
+            </div>
+        </div>
+    </div>
+    <!-- <hr> -->
+    <!-- <mat-divider></mat-divider> -->
+    <div class="box-cards-box">
+        <div class="box-cards">
+            <mat-card *ngFor="let item of Data">
+                <div class="card-header">
+                    <div class="card-product-review">
+                        <span>{{item.restaurant_review}}<mat-icon>star</mat-icon></span>
+                    </div>
+                    <img src={{item.restaurant_images}}>
+                    <div class="offer1">
+                        <span>{{item.first_offer}}</span>
+                    </div>
+                    <div class="offer2">
+                        <span>{{item.second_offer}}</span>
+                    </div>
+
+                </div>
+                <div class="card-body">
+                    <div class="card-product-name-review">
+                        <div class="card-product-name">
+                            <label>{{item.restaurant_name}}</label>
+                        </div>
+                        <div class="card-product-time">
+                            <mat-icon>schedule</mat-icon><span>{{item.restaurant_delievery_time}}</span>
+                        </div>
+                    </div>
+                    <div class="card-product-tag-price">
+                        <div class="card-product-tags">
+                            <label>{{item.restaurant_tags}}</label>
+                        </div>
+                       
+                    </div>
+                    <div class="card-product-cart-order-button">
+                        <div class="card-product-order-button">
+                            <button (click)="ClickOrder(item)" type="button" class="btn btn-warning">Click To
+                                Order&nbsp;<mat-icon>send</mat-icon></button>
+                        </div>
+                    </div>
+                    <div class="card-product-other-details">
+                        <mat-icon>trending_up</mat-icon><label>{{item.restaurant_rating}}+ orders placed from here recently</label>
+                    </div>
+
+                </div>
+
+            </mat-card>
+        </div>
+    </div>
+
+</div>

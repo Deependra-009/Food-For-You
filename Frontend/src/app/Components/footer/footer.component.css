@@ -1,0 +1,77 @@
+.footer-page{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 25px 0px 25px 0px;
+    border-top: 2px solid rgb(145, 247, 191);
+}
+.footer-page-1{
+    width: 60%;
+    padding: 15px;
+}
+.footer-sub-heading{
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+    color: red;
+}
+h4{
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+}
+.footer-head{
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.page2{
+    display: flex;
+    margin: 10px 0px 10px 0px;
+}
+.page2-1{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+}
+.page2-2{
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+}
+
+/****************** responsive ****************************/
+@media only screen and (max-width: 1500px){
+    .footer-page-1{
+        width: 90%;
+    }
+}
+@media only screen and (max-width: 1000px){
+    .footer-page-1{
+        width: 90%;
+    }
+}
+@media only screen and (max-width: 800px){
+    .footer-page-1{
+        width: 90%;
+    }
+    .page2{
+        display: flex;
+        flex-direction: column;
+    }
+    .page2-1,.page2-2{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 500px){
+    .footer-page-1{
+        width: 90%;
+    }
+    .page2{
+        display: flex;
+        flex-direction: column;
+    }
+    .page2-1,.page2-2{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}

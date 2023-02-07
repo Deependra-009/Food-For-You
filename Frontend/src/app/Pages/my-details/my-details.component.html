@@ -1,0 +1,40 @@
+<div class="main-my-details">
+  <div class="mmd-header">
+    <div class="image">
+      <img src="./../../../assets/Images/1.png" alt="profile">
+      <!-- <mat-icon mat-list-icon>account_circle</mat-icon> -->
+    </div>
+  </div>
+  <div class="mmd-body">
+    <div class="mmd-details">
+      <label>Name</label>
+      <mat-form-field  appearance="outline">
+        <input [value]="UserData.fullname" matInput [disabled]="true" >
+      </mat-form-field>
+    </div>
+    <div class="mmd-details">
+      <label>E-mail</label>
+      <mat-form-field   appearance="outline">
+        <input [value]="UserData.email" matInput [disabled]="true" >
+      </mat-form-field>
+    </div>
+    <div class="mmd-details">
+      <label>Phone Number</label>
+      <mat-form-field  appearance="outline">
+        <input [value]="UserData.phone_number"  matInput [disabled]="true" >
+      </mat-form-field>
+    </div>
+    <div class="mmd-details">
+      <label>Address</label>
+      <mat-form-field  appearance="outline">
+        <input [value]="UserData.address" matInput [disabled]="true" >
+      </mat-form-field>
+    </div>
+    <div class="mmd-details">
+      <label>Pincode</label>
+      <mat-form-field  appearance="outline">
+        <input [value]="UserData.pincode" matInput [disabled]="true" >
+      </mat-form-field>
+    </div>
+  </div>
+</div>

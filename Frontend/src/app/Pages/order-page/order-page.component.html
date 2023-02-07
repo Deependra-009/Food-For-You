@@ -1,0 +1,90 @@
+<div class="op-box1">
+  <h1>Order Summary &nbsp; <mat-icon>help</mat-icon></h1>
+</div>
+<div class="op-box2">
+  <ng-container *ngIf="loading">
+    <div class="spinner">
+      <mat-spinner *ngIf="noOrder==false"></mat-spinner>
+      <img *ngIf="noOrder==true" style="width: 30%; height:30%" src="./../../../assets/Images/noorder.png">
+      <h1 *ngIf="noOrder==true" style="margin-top: 20px;"> No Order found</h1>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="loading==false" >
+    <mat-expansion-panel *ngFor="let item of OrderData;" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+          <mat-panel-title>
+              Order ID:&nbsp; <span>#{{item.order_user_id}}</span>
+          </mat-panel-title>
+          <mat-panel-description>
+              <div class="description">
+                  <div>
+                      <label>Order Date: &nbsp; <span>{{item.order_date}}</span></label>
+                  </div>
+                  <div>
+                      <button class="btn btn-outline-danger">Invoice &nbsp; <mat-icon>print</mat-icon></button>
+                  </div>
+              </div>
+          </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="op-box-body">
+              <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Product Name</th>
+                      <th scope="col">Quantity</th>
+                      <th scope="col">Price</th>
+                      <th scope="col">Total Price</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let itemProduct of item.order_product_list">
+                      <td>{{itemProduct.product_name}}</td>
+                      <td>{{itemProduct.product_quantity}}</td>
+                      <td>{{itemProduct.product_price}}</td>
+                      <td>{{multiply(itemProduct.product_price,itemProduct.product_quantity)}}</td>
+                    </tr>
+                    
+                  </tbody>
+                </table>  
+              
+        
+          <div class="op-payment-details">
+              <div class="op-payment-card">
+                  <h3 style="color:tomato;font-size:20px;font-weight:500">Card Details</h3>
+                  <div class="card-details">
+                      <h2>Payment Mode</h2>
+                      <h4>{{item.order_payment_mode}}  <span>XXXX XXXX XXXX 2654</span></h4>
+                  </div>
+                  
+              </div>
+              <div class="op-payment-summary">
+                  <h3 style="color:tomato;font-size:20px;font-weight:500">Payment Summary</h3>
+                  <div class="op-ps">
+                      <table class="table">
+                          <tbody>
+                            <tr>
+                              <th scope="row">SubTotal</th>
+                              <td>$5547</td>
+                              
+                            </tr>
+                            <tr>
+                              <th scope="row">Discount</th>
+                              <td>$0.00</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Tax</th>
+                              <td>$221.88</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Total</th>
+                              <td><span>Rs </span>{{item.order_total_price}}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </mat-expansion-panel>
+  </ng-container>
+</div>

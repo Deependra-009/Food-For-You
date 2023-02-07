@@ -1,0 +1,117 @@
+<!-- ******************** Nav Cover ******************** -->
+<!-- <app-navbar></app-navbar> -->
+<div class="nav-cover-bg">
+    <app-navbar></app-navbar>
+    <div class="nav-search-box">
+        <div class="search-box-heading">
+            <h1 style="color: white;">Food For You</h1>
+        </div>
+        <div class="search-box-search">
+            <div class="searchbar">
+                <form class='search-bar'>
+                    <input type="text" placeholder='Search your favourite dishes' name="q">
+                    <button type="submit">
+                        <mat-icon>search</mat-icon>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ****************** offer page ************************* -->
+<div class="offer-page ">
+    <div class="offer-subpage">
+        <button class="press-left" (click)="btnPrev()">
+            <mat-icon>arrow_back_ios</mat-icon>
+        </button>
+        <button class="press-right" (click)="btnNext()">
+            <mat-icon>arrow_forward_ios</mat-icon>
+        </button>
+
+        <div class="product-container">
+            <div class="myCard">
+                <img src="./../../../assets/Images/1.png">
+            </div>
+            <div class="myCard">
+                <img src="./../../../assets/Images/2.png">
+            </div>
+            <div class="myCard">
+                <img src="./../../../assets/Images/3.png">
+            </div>
+            <div class="myCard">
+                <img src="./../../../assets/Images/4.png">
+            </div>
+            <div class="myCard">
+                <img src="./../../../assets/Images/5.png">
+            </div>
+            
+
+        </div>
+
+    </div>
+</div> 
+
+<!-- ***************** home page 1 *********************** -->
+<div class="home-page-1">
+    <div class="hp-subcategories">
+        <mat-card routerLink="/order-food-online"  class="mat-card-style">
+            <mat-card-title>
+                <img
+                    src="./../../../assets/Images/cholabhatura.jpg">
+            </mat-card-title>
+            <div>
+                <h1>Order Online</h1>
+                <mat-card-content>
+                    Stay home and order to your doorstep
+                </mat-card-content>
+            </div>
+        </mat-card>
+        <mat-card class="mat-card-style">
+            <mat-card-title>
+                <img
+                    src="./../../../assets/Images/dining.jpg">
+            </mat-card-title>
+            <div>
+                <h1>Dining</h1>
+                <mat-card-content>
+                    View the city's favourite dinning venues
+                </mat-card-content>
+            </div>
+        </mat-card>
+        <mat-card class="mat-card-style">
+            <mat-card-title>
+                <img
+                    src="./../../../assets/Images/nightclub.jpg">
+            </mat-card-title>
+            <div>
+                <h1>Nightlife and Clubs</h1>
+                <mat-card-content>
+                    Explore the city's top nightlife outlets
+                </mat-card-content>
+            </div>
+        </mat-card>
+    </div>
+</div>
+<!-- ***************** home page 2 *********************** -->
+<div class="home-page-2">
+    <div class="hp-scroll-page-dish">
+        <button class="press-dish-left" (click)="btnDishPrev()">
+            <mat-icon>arrow_back_ios</mat-icon>
+        </button>
+        <button class="press-dish-right" (click)="btnDishNext()">
+            <mat-icon>arrow_forward_ios</mat-icon>
+        </button>
+        
+        <div class="hp-subcategories-container">
+            <mat-card class="mat-round-card-style" *ngFor="let item of data">
+                <mat-card-title>
+                    <img src={{item.src}}>
+                </mat-card-title>
+                <h1>{{item.name}}</h1>
+            </mat-card>
+        </div>
+    </div>
+</div>
+
+<!-- ********************* footer ********************** -->
+<app-footer></app-footer>

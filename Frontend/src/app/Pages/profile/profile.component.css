@@ -1,0 +1,47 @@
+.main-profile-page{
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: rgba(179, 177, 177, 0.336); */
+    background: url("./../../../assets/Images/register.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-origin: content-box;
+    background-position: center;
+}
+.profile-page{
+    background: rgba(255, 255, 255, .7);
+	-webkit-backdrop-filter: blur(14px);
+	backdrop-filter: blur(14px);
+    width: 80%;
+    min-height: 80vh;
+    /* border: 5px solid rgba(139, 139, 139, 0.479); */
+    border-radius: 20px;
+    /* background-color: aqua; */
+}
+.pp-menubar{
+    width: 20%;
+    /* border-right: 2px solid rgba(143, 143, 143, 0.726); */
+    min-height: 70vh;
+    /* border-top: 1px solid rgba(112, 112, 112, 0.596);
+    border-left: 1px solid rgba(112, 112, 112, 0.596);
+    border-bottom: 1px solid rgba(112, 112, 112, 0.596); */
+}
+
+
+.pp-page{
+    width: 80%;
+    border-left: 1px solid rgba(112, 112, 112, 0.596);
+}
+.pp-body{
+    display: flex;
+}
+
+.pp-menubar mat-action-list button:hover{
+    border-right: 5px solid red;
+    background-color: rgba(128, 128, 128, 0.61);
+    color: rgb(255, 255, 255);
+    border-radius:25px 0px 0px 25px;
+}

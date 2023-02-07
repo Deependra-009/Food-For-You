@@ -1,0 +1,419 @@
+.payment-page {
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.pp-box {
+    width: 80%;
+    height: 90vh;
+    /* border: 2px solid black; */
+    padding: 20px;
+    display: flex;
+    background: rgba(175, 175, 175, 0.267);
+    border-radius: 10px;
+}
+
+.pp-box1 {
+    border-radius: 5px;
+    width: 50%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+    background: white;
+}
+
+.box1-header-secure {
+    display: flex;
+    /* border: 2px solid black; */
+    padding: 10px;
+}
+
+.pp-box2 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    /* justify-content: space-around; */
+}
+
+.pp-box1 .box1-header {
+    width: 50%;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.box1-tag {
+    width: 50%;
+}
+
+.box1-tag h3 {
+    font-size: 20px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    /* margin-top: 10px; */
+}
+
+.box1-tag h5 {
+    font-size: 17px;
+    /* margin-top: 10px; */
+}
+
+.box1-payment-mode {
+    width: 100%;
+    min-height: 70%;
+    overflow-y: scroll;
+    /* border: 1px solid black; */
+}
+.box1-payment-mode::-webkit-scrollbar{
+    display: none;
+}
+
+/******************* box 2 ******************/
+
+.box2-header {
+    width: 100%;
+    padding: 6px;
+    font-size: 25px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+
+}
+
+.box2-steps {
+    width: 100%;
+    min-height: 15%;
+    border: 2px solid rgba(73, 72, 72, 0.247);
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 10px;
+}
+
+.box2-cart {
+    margin-top: 1.6em;
+    /* border: 1px solid red; */
+    /* min-height: 40%; */
+    
+}
+
+
+
+.step1,
+.step2,
+.step3 {
+    /* border: 1px solid black; */
+    width: 50%;
+    display: flex;
+}
+
+.step1,
+.step2 {
+    border-right: 2px solid rgba(73, 72, 72, 0.247);
+}
+
+.step-icon {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.step-icon span {
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.color-step1{
+    background-color: rgb(238, 167, 238);
+}
+.color-step2{
+    background-color: rgb(250, 150, 57);
+}
+.color-step3{
+    background-color: rgb(138, 243, 117);
+}
+
+.step-data {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    /* border: 2px solid black; */
+    /* padding-top: 10px; */
+}
+
+.step-data h3 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.step-data label {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+/******************* debit card ***********************/
+.debit-card {
+    width: 100%;
+    display: flex;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+}
+
+.debit-card .save-card {
+    width: 40%;
+    /* border: 1px solid black; */
+    height: 80%;
+    overflow: scroll;
+}
+.debit-card .save-card::-webkit-scrollbar{
+    display: none;
+}
+
+.debit-card .card-details {
+    width: 60%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.debit-card .card-details form {
+    width: 80%;
+}
+
+.card-details .input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.card-details .input-button {
+    display: flex;
+    justify-content: space-around;
+}
+
+.box2-cart .payment-cart {
+    width: 100%;
+    height: 400px;
+    /* border: 1px solid black; */
+    overflow-y: scroll;
+}
+.box2-cart .payment-cart::-webkit-scrollbar {
+    display: none;
+}
+
+
+.pd-data:hover {
+    cursor: pointer;
+}
+
+.pd-data span {
+    width: 20%;
+    border: 2px solid rgb(95, 95, 95);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    /* align-items: center; */
+}
+
+.pd-data span label {
+    width: 50%;
+    font-size: 15px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    padding: 0px 5px 0px 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.pd-data span mat-icon {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-product-detail {
+    width: 100%;
+    min-height: 60px;
+    /* border: 2px solid black; */
+}
+
+.pd-data {
+    width: 100%;
+    padding: 10px;
+    /* justify-content: space-between; */
+    display: flex;
+}
+
+/* <span><mat-icon [ngStyle]="{color:'green'}">add</mat-icon><label>1</label><mat-icon [ngStyle]="{color:'red'}">remove</mat-icon></span> */
+
+
+.pd-data label{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 400;
+}
+.pd-data .heading{
+    font-size: 18px;
+    font-weight: 500;
+
+}
+mat-expansion-panel{
+    margin-top: 10px;
+}
+
+
+
+.box2-payment{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-around;
+    /* align-items: center; */
+}
+.box2-payment h3{
+    font-size: 23px;
+}
+.box2-payment h2{
+    color: blue;
+}
+
+/*************** card ***************/
+
+.sc-card{
+    width: 100%;
+    min-height: 150px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.952);
+    margin-top: 10px;
+    cursor: pointer;
+}
+.dc-save-card{
+    width: 40%;
+    min-height: 100%;
+    border: 2px solid red;;
+    /* margin-top: 10px; */
+}
+.sc-card-add{
+    margin-top: 10px;
+    width: 100%;
+    min-height: 150px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    flex-direction: column;
+    cursor: pointer;
+    /* background-color: rgba(0, 0, 0, 0.952); */
+}
+.sc-sim{
+    width: 30%;
+    display: flex;
+    color: white;
+    /* border: 1px solid white; */
+    justify-content: center;
+    align-items: center;
+}
+.sc-sim img{
+    width: 60%;
+    height: 30%;
+}
+.sc-sim mat-icon{
+    transform: rotate(90deg);
+}
+.sc-number{
+    width: 100%;
+    min-height: 30px;
+    justify-content: space-around;
+    color: white;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+.sc-details{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    margin-top: 15px;
+    font-size: 10px;
+}
+
+.input-cvv-expiry{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+    
+
+}
+.input-cvv-expiry .cvv{ 
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* border: 1px solid black; */
+}
+.input-cvv-expiry .cvv mat-form-field,.input-cvv-expiry .expiry mat-form-field{
+    width: 80%;
+}
+.input-cvv-expiry .expiry{ 
+    width: 50%;
+    display: flex;
+    
+    flex-direction: column;
+    /* border: 1px solid black; */
+}
+.input-cvv-expiry .expiry label{
+    width: 100%;
+}
+.input-cvv-expiry .expiry mat-form-field{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+    padding: 0px;
+    
+}
+.expiry .datepicker input{
+    width: 60%;
+    /* border: 1px solid black; */
+    font-size: 20px;
+    
+}
+
+
+
+.example-month-picker .mat-calendar-period-button {
+    pointer-events: none;
+  }
+  
+  .example-month-picker .mat-calendar-arrow {
+    display: none;
+  }

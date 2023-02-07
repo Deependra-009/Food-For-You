@@ -1,0 +1,135 @@
+.order-page{
+    width: 100%;
+    height: 90vh;
+    background-color: rgba(163, 163, 163, 0.158);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.order-page-box{
+    width: 70%;
+    background: white;
+    min-height: 80vh;
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid rgba(124, 123, 123, 0.692);
+
+}
+.op-box1{
+    padding: 15px 0px 0px 15px;
+}
+.op-box1,.op-box2{
+    width: 100%;
+    margin-top: 10px;
+}
+.op-box2{
+    margin-top: 20px;
+    /* border: 2px solid black; */
+    max-height: 67vh;
+    overflow: scroll;
+    padding: 0 15px 0px 15px;
+}
+.op-box2::-webkit-scrollbar{
+    display: none;
+}
+.op-box2 mat-expansion-panel {
+    margin-top: 10px;
+    border: 1px solid rgba(148, 145, 145, 0.699);
+    box-shadow: none;
+ 
+}
+.spinner{
+    width: 100%;
+    min-height: 30em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid black; */
+}
+.op-box2 mat-expansion-panel mat-panel-title{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.description{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: black;
+    font-size: 17px;
+}
+.description div label{
+    /* color: orangered; */
+}
+.description div label span{
+    color: orangered;;
+}
+/********** order data *******************/
+mat-panel-title{
+    color: rgb(43, 5, 255);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+mat-panel-title span{
+    color: rgb(238, 78, 78);
+}
+.op-box-body{
+    width: 100%;
+    border-top: 1px solid rgba(112, 111, 111, 0.377);
+}
+.op-product-data{
+    width: 100%;
+    min-height: 30%;
+    
+    display: flex;
+}
+.product-data-box1{
+    width: 70%;
+    padding: 15px;
+    border-bottom: 1px solid rgba(87, 85, 85, 0.336);
+}
+.product-data-box2{
+    padding: 15px;
+    width: 30%;
+    border-bottom: 1px solid rgba(87, 85, 85, 0.336);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box1-name,.box2-price{
+    padding: 5px;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.box1-type,.box2-quantity{
+    font-size: 17px;
+    padding: 5px;
+}
+
+.op-payment-details{
+    margin-top: 10px;
+    display: flex;
+}
+.op-payment-card{
+    width: 50%;
+}
+.op-payment-card h3,.op-payment-summary h3{
+    font-size: 18px;
+}
+.op-payment-summary{
+    width: 50%;
+}
+.card-details h4{
+    font-size: 20px;
+}

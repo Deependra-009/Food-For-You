@@ -1,0 +1,96 @@
+<app-other-pages-navbar></app-other-pages-navbar>
+<div class="register-page">
+    <div class="rp-box1">
+        <ng-container *ngIf="step1">
+            <div class="rp-b2">
+                <div class="b2-header">
+                    <label>Register</label>
+                </div>
+                <div class="b2-inputbox">
+                    <form [formGroup]="UserLoginData">
+                        <div class="email">
+                            <span>E-Mail</span>
+                            <mat-form-field appearance="outline">
+                                <input formControlName="email" matInput placeholder="E-mail">
+                            </mat-form-field>
+                        </div>
+                        <div class="password">
+                            <span>Password</span>
+                            <mat-form-field appearance="outline">
+                                <input formControlName="password" matInput placeholder="Password">
+                            </mat-form-field>
+                        </div>
+                        <div class="password">
+                            <span>Confirm Password</span>
+                            <mat-form-field appearance="outline">
+                                <input formControlName="cpassword" matInput placeholder="Confirm Password">
+                            </mat-form-field>
+                        </div>
+                        <div class="submit">
+                            <button (click)="step1Function()" class="btn btn-danger">SIGN UP</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="b2-dont-have-account">
+                    <label>Already have an account?</label>
+                    <span routerLink="/login">Sign In</span>
+                </div>
+                <mat-divider></mat-divider>
+                <div class="b2-otherway">
+                    <ul>
+                        <li>
+                            <i class="fa fa-google" aria-hidden="true"></i>
+                            Login with Google
+                        </li>
+                        <li>
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                            Login with Facebook
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="step2">
+            <div class="page2">
+                <div class="page2-header">
+                    <label>Hello </label><span>{{username}}</span>
+                </div>
+                <div class="page2-inputbox">
+                    <form [formGroup]="UserProfileData" (ngSubmit)="submitData()">
+                        <div class="email">
+                            <span>Full Name</span>
+                            <mat-form-field appearance="outline">
+                                <input formControlName="fullname" matInput placeholder="Enter Full Name">
+                            </mat-form-field>
+                        </div>
+                        <div class="email">
+                            <span>Phone Number</span>
+                            <mat-form-field appearance="outline">
+                                <input formControlName="phone_number" matInput placeholder="Enter Phone Number">
+                            </mat-form-field>
+                        </div>
+                        <div class="email">
+                            <span>Address</span>
+                            <mat-form-field appearance="outline">
+                                <input formControlName="address" matInput placeholder="Enter Address">
+                            </mat-form-field>
+                        </div>
+                        <div class="password">
+                            <span>Pincode</span>
+                            <mat-form-field appearance="outline">
+                                <input formControlName="pincode" matInput placeholder="Enter Pincode">
+                            </mat-form-field>
+                        </div>
+                        <div class="submit">
+                            <button  class="btn btn-danger">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </ng-container>
+        <!-- <div class="rp-b1">
+            <img src="./../../../assets/Images/register.jpg">
+        </div> -->
+    </div>
+</div>
+<app-footer></app-footer>

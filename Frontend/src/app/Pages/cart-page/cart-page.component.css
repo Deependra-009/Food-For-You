@@ -1,0 +1,224 @@
+.main-cart-page{
+    width: 100%;
+    background-color: rgba(163, 161, 161, 0.140);
+    display: flex;
+    justify-content: center;
+    min-height: 90vh;
+}
+.cart-page-box{
+    width: 80%;
+    /* border: 1px solid black; */
+    display: flex;
+}
+mat-card{
+    margin: 10px;
+}
+.cart-product-details{
+    width: 60%;
+}
+.cart-pd-pb-header{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.cart-pd-pb-header label{
+    font-size: 20px;
+}
+.cart-pd-pb-header label span{
+    color: green;
+}
+.cart-pd-pb-body{
+    width: 100%;
+    padding: 10px;
+    max-height: 550px;
+    overflow-y: scroll;
+}
+.cart-pd-pb-body::-webkit-scrollbar{
+    display: none;
+}
+.cart-pd-pb-body .cart-box{
+    border: 1px solid rgba(0, 0, 0, 0.26);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.cart-pd-pb-body .cart-box .cart-box1{
+    width: 30%;
+}
+.cart-pd-nofee-box h3{
+    display: flex;
+    justify-content: left;
+}
+.cart-pd-nofee-box h3 mat-icon{
+    margin-right: 10px;
+}
+
+
+.cart-box1 img{
+    width: 100%;
+}
+.cart-box2{
+    width: 68%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black;    */
+
+}
+.cart-box2 h4,
+.cart-box2 label{
+    font-size: 18px;
+    padding-top: 15px;
+}
+.cart-product-price-box label{
+    font-size: 18px;
+}
+.cart-product-buttons{
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    /* border: 1px solid black; */
+    max-width: 100%;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+.cart-product-buttons label{
+    width: 30%;
+    font-size: 20px;
+}
+
+.cart-product-buttons span{
+    width: 30%;
+    border: 2px solid rgb(95, 95, 95);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.cart-product-buttons span label{
+    width: 50%;
+    font-size: 15px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    padding:0px 5px 0px 5px;
+    display: flex;
+    justify-content: center;
+}
+.cart-product-buttons span mat-icon{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cart-product-buttons span mat-icon:hover{
+    cursor: pointer;
+}
+.cart-box2 mat-checkbox{
+    position: relative;
+    left: 95%;
+}
+/************** box 2********************/
+
+.cart-product-price{
+    
+    width: 30%;
+    /* max-height: 780px; */
+}
+.cpp-coupon{
+    
+    width: 100%;
+    /* padding: 15px 10px; */
+}
+.cpp-p-header{
+    font-size: 20px;
+}
+.cpp-p-body1{
+    width: 100%;
+    margin-top: 1.6rem;
+    padding: 15px 0px 10px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cpp-p-body1 span{
+    width: 60%;
+    font-size: 18px;
+}
+.cpp-p-body1 span{
+    display: flex;
+    justify-content: center;
+    justify-content: left;
+}
+.cpp-p-body1 span mat-icon{
+
+    margin-right: 5px;
+}
+.cpp-p-body1 span button{
+    width: 100%;
+}
+.cpp-p-body2{
+    width: 100%;
+    padding: 15px 0px 10px 0px;
+}
+.cpp-p-body2 label{
+    font-size: 18px;
+}
+.cpp-p-body2 label span{
+    font-size: 20px;
+}
+.cpp-p-body2 label span:hover{
+    cursor: pointer;
+}
+
+.cpp-price-details{
+    width: 100%;
+    padding: 15px 0px 10px 0px;
+}
+
+.cpp-header{
+    padding: 15px 0px 10px 0px;
+    display: flex;
+    justify-content: space-around;
+}
+.cpp-header label{
+    font-size: 20px;
+    padding: 5px;
+}
+.cpp-header label span{
+    margin-left: 5px;
+}
+
+.cpp-price{
+    width: 100%;
+}
+.cpp-price .price{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0px 10px 0px;
+
+}
+.cpp-price .price label{
+    font-size: 18px;
+}
+.total-price{
+    color: red;
+    font-weight: 500;
+    width: 100%;
+    padding: 15px 0px 10px 0px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-around;
+    
+}
+.cpp-place-order-button{
+    padding: 15px 0px 10px 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.cpp-place-order-button button{
+    width: 80%;
+    border-radius: 0px;
+}

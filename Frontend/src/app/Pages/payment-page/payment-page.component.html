@@ -1,0 +1,194 @@
+ <app-other-pages-navbar></app-other-pages-navbar>
+
+<div class="payment-page">
+    <div class="pp-box">
+        <div class="pp-box1">
+            <div class="box1-header-secure">
+                <div class="box1-header">
+                    Payment Details
+                </div>
+                <div class="box1-tag">
+                    <h3>Card is Secure&nbsp;&nbsp;<mat-icon>lock</mat-icon></h3>
+                    <h5>Your data is protected,everything will be private</h5>
+                </div>
+            </div>
+            <div class="box1-payment-mode">
+                <mat-tab-group>
+                    <mat-tab label="Debit Card">
+                        <div class="debit-card">
+                            <!-- <div class="dc-save-card"> -->
+                            <div class="save-card">
+                                <ng-container *ngIf="SaveCard.length!=0">
+                                    <div *ngFor="let item of SaveCard" class="sc-card">
+                                        <div class="sc-image">
+                                            <div class="sc-sim">
+                                                <img src="./../../../assets/Images/sim-card-chip.png">
+                                                <mat-icon>wifi</mat-icon>
+                                            </div>
+                                            <div class="sc-number">
+                                                <label>XXXX</label>
+                                                <label>XXXX</label>
+                                                <label>XXXX</label>
+                                                <label>1234</label>
+                                            </div>
+                                            <div class="sc-details">
+                                                <div class="sc-name">
+                                                    <label>CARD HOLDER</label>
+                                                    <h4>{{item.card_holder_name}}</h4>
+                                                </div>
+                                                <div class="sc-name">
+                                                    <label>EXPIRY</label>
+                                                    <h4>{{item.expiry}}</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                                <div (click)="addACard()" class="sc-card-add">
+                                    <mat-icon>add_circle</mat-icon>
+                                    <h3>ADD A CARD</h3>
+                                </div>
+                            </div>
+                            <!-- </div> -->
+                            <div class="card-details">
+                                <form [formGroup]="PaymentForm">
+                                    <div class="input">
+                                        <span>Card Number</span>
+                                        <mat-form-field appearance="outline">
+                                            <input formControlName="account_no" matInput
+                                                placeholder="Enter Account Number">
+
+
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="input">
+                                        <span>Card Holder Name</span>
+                                        <mat-form-field appearance="outline">
+                                            <input formControlName="card_holder_name" matInput
+                                                placeholder="Enter Name">
+
+
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="input-cvv-expiry">
+                                        <div class="cvv">
+                                            <span>CVV Number</span>
+                                            <mat-form-field appearance="outline">
+                                                <input formControlName="cvv" matInput placeholder="CVV">
+
+
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="expiry">
+                                            <label class="key col-2">Expiry Date</label>
+                                            <mat-form-field appearance="outline" class="col-8">
+                                                <!-- <mat-label>Month and Year</mat-label> -->
+                                                <input formControlName="expiry" [min]="minDate" id="expirydate" matInput [matDatepicker]="dp"
+                                                    [formControl]="date">
+                                                <!-- <mat-hint>MM/YYYY</mat-hint> -->
+                                                <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+                                                <mat-datepicker #dp startView="multi-year"
+                                                    (monthSelected)="setMonthAndYear($event, dp)"
+                                                    panelClass="example-month-picker">
+                                                </mat-datepicker>
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="input-button">
+                                        <button (click)="PaymentFunction()" class="btn btn-dark">Confirm Order</button>
+                                        <button class="btn btn-light">Cancel and Return</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </mat-tab>
+                    <mat-tab label="Credit Card">Credit Card </mat-tab>
+                    <mat-tab label="UPI"> UPI</mat-tab>
+                    <mat-tab label="NetBanking"> NetBanking </mat-tab>
+                </mat-tab-group>
+            </div>
+        </div>
+        <div class="pp-box2">
+            <div class="box2-header">
+                Order Summary
+            </div>
+            <div class="box2-steps">
+                <div class="step1">
+                    <div class="step-icon">
+                        <span class="color-step1"><mat-icon>shopping_cart</mat-icon></span>
+                    </div>
+                    <div class="step-data">
+                        <h3>Step 1</h3>
+                        <label>Shipping</label>
+                    </div>
+
+                </div>
+                <div class="step2">
+                    <div class="step-icon">
+                        <span class="color-step2"><mat-icon>credit_card</mat-icon></span>
+                    </div>
+                    <div class="step-data">
+                        <h3>Step 2</h3>
+                        <label>Payment</label>
+                    </div>
+                </div>
+                <div class="step3">
+                    <div class="step-icon">
+                        <span class="color-step3"><mat-icon>sync</mat-icon></span>
+                    </div>
+                    <div class="step-data">
+                        <h3>Step 3</h3>
+                        <label>Review</label>
+                    </div>
+                </div>
+            </div>
+            <div class="box2-cart">
+                <div class="payment-cart">
+                    <mat-expansion-panel *ngFor="let item of CartProducts" (opened)="panelOpenState = true"
+                        (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+
+                            <div class="pd-data">
+                                <mat-panel-title>
+                                    {{item.name}}
+                                </mat-panel-title>
+                                <span><mat-icon (click)="increase(item)"
+                                        [ngStyle]="{color:'green'}">add</mat-icon><label>{{item.quantity}}</label><mat-icon
+                                        [ngStyle]="{color:'red'}" (click)="decrease(item)">remove</mat-icon></span>
+
+                            </div>
+
+                        </mat-expansion-panel-header>
+                        <hr>
+                        <div class="cart-product-detail">
+                            <div class="pd-data">
+                                <label class="heading">Restaurant Name</label>
+                                <label>{{item.restaurant_name}}</label>
+                            </div>
+                            <div class="pd-data">
+                                <label class="heading">Quantity: &nbsp;{{item.quantity}}</label>
+                                <!-- <span><mat-icon (click)="increase(item)"
+                                        [ngStyle]="{color:'green'}">add</mat-icon><label>{{item.quantity}}</label><mat-icon
+                                        [ngStyle]="{color:'red'}"  (click)="decrease(item)">remove</mat-icon></span> -->
+
+                            </div>
+                            <div class="pd-data">
+                                <label class="heading"> Total Price</label>
+                                <label>RS&nbsp; {{item.total_price}}</label>
+                                <button (click)="removeProductFronCart(item)"  class="btn btn-danger">REMOVE FROM CART</button>
+                            </div>
+                        </div>
+                    </mat-expansion-panel>
+                </div>
+            </div>
+            <div class="box2-payment">
+                <h3>Total Amount</h3>
+                <h2>Rs&nbsp;{{TotalPrice}}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<app-footer></app-footer>

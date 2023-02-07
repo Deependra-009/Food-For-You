@@ -1,0 +1,49 @@
+<div class="main-my-details">
+    <div class="mmd-header">
+        <div class="image">
+            <img src="./../../../assets/Images/1.png" alt="profile">
+        </div>
+    </div>
+    <div class="mmd-body">
+        <form [formGroup]="UserData">
+            <div class="mmd-details">
+                <label>Name</label>
+                <mat-form-field appearance="outline">
+                    <input formControlName="fullname"  matInput>
+                    <mat-icon matSuffix>edit</mat-icon>
+                </mat-form-field>
+            </div>
+            <div class="mmd-details">
+                <label>E-mail</label>
+                <mat-form-field appearance="outline">
+                    <input formControlName="email"  matInput >
+                </mat-form-field>
+            </div>
+            <div class="mmd-details">
+                <label>Phone Number</label>
+                <mat-form-field appearance="outline">
+                    <input formControlName="phone_number"  matInput>
+                    <mat-icon matSuffix>edit</mat-icon>
+                </mat-form-field>
+            </div>
+            <div class="mmd-details">
+                <label>Address</label>
+                <mat-form-field appearance="outline">
+                    <input formControlName="address"  matInput>
+                    <mat-icon matSuffix>edit</mat-icon>
+                </mat-form-field>
+            </div>
+            <div class="mmd-details">
+                <label>Pincode</label>
+                <mat-form-field appearance="outline">
+                    <input formControlName="pincode"  matInput>
+                    <mat-icon matSuffix>edit</mat-icon>
+                </mat-form-field>
+            </div>
+            <div class="mmd-details">
+                <button (click)="update()" class="btn btn-outline-primary">UPDATE</button>
+                <button class="btn btn-outline-danger">CLEAR</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,135 @@
+<app-other-pages-navbar></app-other-pages-navbar>
+<div class="register-page">
+    <div class="rp-box1">
+        <!-- <div class="rp-b1">
+            <img src="./../../../assets/Images/register.jpg">
+        </div> -->
+        <ng-container *ngIf="forgetPassword==false">
+            <div class="rp-b2">
+                <div class="b2-header">
+                    <label>Login</label>
+                </div>
+                <div class="b2-inputbox">
+                    <form [formGroup]="LoginData" (ngSubmit)="submitFunction()">
+                        <div class="email">
+                            <span>E-Mail</span>
+                            <mat-form-field appearance="outline">
+                                <input formControlName="email" matInput placeholder="E-mail">
+                            </mat-form-field>
+                        </div>
+                        <div class="password">
+                            <span>Password</span>
+                            <mat-form-field appearance="outline">
+                                <input formControlName="password" matInput placeholder="Password">
+                            </mat-form-field>
+                            <span (click)="forgetPassword=true" class="forget-password">Forget Password</span>
+                        </div>
+                        <div class="submit">
+                            <button  class="btn btn-danger">SIGN UP</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="b2-dont-have-account">
+                    <label>Don't have an account yet?</label>
+                    <span routerLink="/register">Sign Up</span>
+                </div>
+                <mat-divider></mat-divider>
+                <div class="b2-otherway">
+                    <ul>
+                        <li>
+                            <i class="fa fa-google" aria-hidden="true"></i>
+                            Login with Google
+                        </li>
+                        <li>
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                            Login with Facebook
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="forgetPassword==true">
+            <div *ngIf="steps==1" class="main-cp-page">
+                <div class="cp-image">
+                    <span><mat-icon>key</mat-icon></span>
+                </div>
+                <div class="cp-heading">
+                    <h1>Forget Password?</h1>
+                    <h3>No worries,we'll send you reset instruction</h3>
+                </div>
+                <div class="cp-body">
+                    <form [formGroup]="ForgetLoginData">
+                        <div class="email">
+                            <span>E-Mail</span>
+                            <mat-form-field appearance="outline">
+                                <input formControlName="email"  matInput placeholder="E-mail">
+                            </mat-form-field>
+                        </div>
+                        <div class="fp-mmd-details button">
+                            <button (click)="step1function()" class="btn btn-danger"> Reset Password</button>
+                        </div>
+            
+                    </form>
+                </div>
+            </div>
+            <div *ngIf="steps==2" class="main-cp-page-spinner">
+                <mat-spinner></mat-spinner>
+            </div>
+            
+            <div *ngIf="steps==3" class="main-cp-page">
+                <div class="cp-image">
+                    <span><mat-icon>key</mat-icon></span>
+                </div>
+                <div class="cp-heading">
+                    <h1>Forget Password?</h1>
+                    <h3>OTP sent in your given mail</h3>
+                </div>
+                <div class="cp-body">
+                    <form [formGroup]="ForgetLoginData">
+                        <div class="email">
+                            <span>Enter OTP</span>
+                            <mat-form-field appearance="outline">
+                                <input formControlName="userotp"  matInput placeholder="Enter OTP">
+                            </mat-form-field>
+                        </div>
+                        <div class="fp-mmd-details fp-otp button">
+                            <button  (click)="steps=1" class="btn btn-dark"> Back</button>
+                            <button (click)="step2function()" class="btn btn-danger"> Reset Password</button>
+                        </div>
+            
+                    </form>
+                </div>
+            </div>
+            <div *ngIf="steps==4" class="main-cp-page">
+                <div class="cp-image">
+                    <span><mat-icon>key</mat-icon></span>
+                </div>
+                <div class="cp-heading">
+                    <h1>Forget Password?</h1>
+                    <h3>OTP sent in your given mail</h3>
+                </div>
+                <div class="cp-body">
+                    <form [formGroup]="PasswordForm">
+                        <div class="email">
+                            <span>Password</span>
+                            <mat-form-field appearance="outline">
+                                <input formControlName="password"  matInput placeholder="Enter password">
+                            </mat-form-field>
+                        </div>
+                        <div class="email">
+                            <span>Confirm Password</span>
+                            <mat-form-field appearance="outline">
+                                <input formControlName="confirmPassword"  matInput placeholder="Enter confirm password">
+                            </mat-form-field>
+                        </div>
+                        <div class="fp-mmd-details button">
+                            <button (click)="step3function()" class="btn btn-danger"> Reset Password</button>
+                        </div>
+            
+                    </form>
+                </div>
+            </div>
+            
+        </ng-container>
+    </div>
+</div>

@@ -1,0 +1,134 @@
+
+/*********** inspiration your first order ******************/
+
+.box-inspiration-your-first-order{
+    width: 100%;
+    background-color: rgba(167, 165, 165, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.6rem 0px 1.6rem 0px;
+}
+.inspiration-your-first-order{
+    width: 90%;
+    display: flex;
+}
+.inspiration-your-first-order-heading label{
+    font-size: 30px;
+    /* margin-left: 1.6rem; */
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+}
+.inspiration-your-first-order-heading{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+.inspiration-your-first-order div{
+    width: 20%;
+    padding: 1%;
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.inspiration-your-first-order div:hover{
+    cursor: pointer;
+    border-bottom: 2px solid rgb(255, 0, 0);
+    transform: translateY(-10px) scale(1.1);
+    transition: 0.6s;
+}
+.inspiration-your-first-order div img{
+    width: 90%;
+    border-radius: 50%;
+    /* transform: scaleY(10px); */
+}
+.inspiration-your-first-order div label{
+    margin-top: 10px;
+    font-size: 23px;
+}
+
+/*********** Product Search Page ******************/
+
+.psp-main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 3em;
+    
+}
+.psp-main-page{
+    width: 80%;
+    padding: 2em;
+    /* border: 1px solid black; */
+}
+.psp-product-page{
+    width: 100%;
+    min-height: 200px;
+    padding: 10px;
+    display: flex;
+    border-radius: 10px;
+    border: 1px solid rgb(155, 155, 155);
+}
+.psp-product-page:hover{
+    cursor: pointer;
+}
+.psp-pp-image{
+    width: 15%;
+    min-height: 100px;
+    /* min-height: 150px;
+    padding: 10px;*/  
+}
+.psp-pp-image img{
+    width: 100%;
+    border-radius: 15px;
+}
+.psp-pp-detail-box{
+    width: 70%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+.psp-pp-name,.psp-pp-des,.psp-pp-quantity,.psp-pp-price,.psp-pp-res-name{
+    padding: 4px;
+}
+.psp-pp-name h4{
+    font-size: 25px;
+}
+.psp-pp-res-name h4{
+    font-size: 18px;
+}
+.psp-pp-des h4{
+    font-size: 18px;
+}
+.psp-pp-quantity h4{
+    font-size: 18px;
+}
+.psp-pp-price-box{
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.psp-pp-price,.psp-add-button,.psp-add-button{
+    padding: 10px;
+}
+.psp-pp-price{
+    width: 100%;
+}
+.psp-pp-price h4{
+    font-size: 20px;
+}
+.psp-pp-price h4 span{
+    font-size: 20px;
+    color: red;
+}
+.psp-add-button{
+    width: 100%;
+}
+.psp-add-button button{
+    width: 80%;
+}
+
