@@ -41,6 +41,12 @@ public class ProductServiceImplementation implements ProductService {
 		// TODO Auto-generated method stub
 		return this.productRepo.save(product);
 	}
+
+	@Override
+	public List<ProductModal> searchProduct(String keyword) {
+		// TODO Auto-generated method stub
+		return this.productRepo.getSearchProduct(keyword);
+	}
 	
 
 }

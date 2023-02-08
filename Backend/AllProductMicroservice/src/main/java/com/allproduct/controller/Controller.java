@@ -106,6 +106,16 @@ public class Controller {
 		return list;
 		
 	}
+	
+	/******************** Search Product ***************************/
+	
+	@GetMapping("/search-product/{keyword}")
+	private List<ProductModal> searchProduct(@PathVariable("keyword") String keyword) {
+		
+		return this.productService.searchProduct(keyword);
+		
+
+	}
 
 	
 	

@@ -11,4 +11,5 @@ public interface ProductService {
 	public List<ProductModal> getAllProduct();
 	public List<ProductModal> getParticularRestaurantProducts(RestaurantModal restaurant);
 	public ProductModal updateProduct(ProductModal product);
+	public List<ProductModal> searchProduct(String keyword);
 }
