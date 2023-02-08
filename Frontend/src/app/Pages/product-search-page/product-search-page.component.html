@@ -7,7 +7,7 @@
         <div class="inspiration-your-first-order">
 
 
-            <div routerLink="/product-search-page" *ngFor="let item of Inspiration_Your_First_Order_Data">
+            <div (click)="searchProduct(item.name)" *ngFor="let item of Inspiration_Your_First_Order_Data">
                 <img src={{item.source}}>
                 <label>{{item.name}}</label>
             </div>
@@ -17,40 +17,49 @@
 
     <div class="psp-main">
         <div class="psp-main-page">
-            <mat-card class="psp-product-page">
-                <div class="psp-pp-image">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/food-for-you-e2209.appspot.com/o/Images%2FRestaurantImages%2Fr-2.webp?alt=media&token=ac7a9cc8-e898-4a0e-b82b-056eb1144f73">
-                </div>
-                <div class="psp-pp-detail-box">
-                    <div class="psp-pp-name">
-                        <h4>Gift Hamper</h4>
+            <ng-container *ngIf="SearchProductData.length!=0">
+                <mat-card *ngFor="let item of SearchProductData" class="psp-product-page">
+                    <div class="psp-pp-image">
+                        <img src={{item.product_image}}>
                     </div>
-                    <div class="psp-pp-des">
-                        <h4>This gift hamper is a joy combo of chips, chocolates, namkeen, muffin cake, biscuits, kinder joy, lotto choco pie, cadbury, toffees, jellys,etc</h4>
+                    <div class="psp-pp-detail-box">
+                        <div class="psp-pp-name">
+                            <h4>{{item.product_name}}</h4>
+                        </div>
+                        <div class="psp-pp-des">
+                            <h4>{{item.product_description}}</h4>
+                        </div>
+                        <div class="psp-pp-res-name">
+                            <h4>Restaurant Name: <span>{{item.restaurant.restaurant_name}}</span></h4>
+                        </div>
+                        <div class="psp-pp-quantity">
+                            <h4>Quantity: <span>1</span></h4>
+                        </div>
+                       
                     </div>
-                    <div class="psp-pp-res-name">
-                        <h4>Restaurant Name: <span>abc</span></h4>
+                    <div class="psp-pp-price-box">
+                        <div class="psp-pp-price">
+                            <h4>Price: <span>₹ {{item.product_price}}</span></h4>
+                        </div>
+                        
+                        <div class="psp-add-button">
+                            <button class="btn btn-outline-success">ADD TO CART</button>
+                        </div>
+    
+                        <div class="psp-add-button">
+                            <button class="btn btn-outline-danger">VIEW DETAILS</button>
+                        </div>
+    
                     </div>
-                    <div class="psp-pp-quantity">
-                        <h4>Quantity: <span>1</span></h4>
+                </mat-card>
+            </ng-container>
+            <ng-container *ngIf="SearchProductData.length==0 && isSearchProduct==true">
+                <mat-card>
+                    <div class="no-product-found">
+                        <h5>!!!&nbsp;Oops,No Product Found</h5>
                     </div>
-                   
-                </div>
-                <div class="psp-pp-price-box">
-                    <div class="psp-pp-price">
-                        <h4>Price: <span>Rs 180</span></h4>
-                    </div>
-                    
-                    <div class="psp-add-button">
-                        <button class="btn btn-outline-success">ADD TO CART</button>
-                    </div>
-
-                    <div class="psp-add-button">
-                        <button class="btn btn-outline-danger">VIEW DETAILS</button>
-                    </div>
-
-                </div>
-            </mat-card>
+                </mat-card>
+            </ng-container>
         </div>
     </div>
 </div>

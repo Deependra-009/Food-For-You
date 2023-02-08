@@ -80,6 +80,8 @@ export class OrderFoodOnlineComponent implements OnInit {
 
   }
 
+
+
   ClickOrder(resdata:any){
 
     this.apiService.getParticularRestaurantProducts(resdata.restaurant_id).subscribe(

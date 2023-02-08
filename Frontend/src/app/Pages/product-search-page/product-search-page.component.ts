@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { APISERVICEService } from 'src/app/Service/api-service.service';
 
 @Component({
   selector: 'app-product-search-page',
@@ -50,11 +52,35 @@ export class ProductSearchPageComponent implements OnInit {
     }
   ]
 
+  isSearchProduct:boolean=false;
 
-  constructor() { }
+  SearchProductData:any=[]
+
+
+  constructor(
+    private route:Router,
+    private apiService:APISERVICEService,
+  ) { }
+
 
   ngOnInit(): void {
   }
+
+  searchProduct(key:String){
+    this.apiService.getSearchProduct(key).subscribe(
+      (data:any)=>{
+        this.SearchProductData=data;
+        this.isSearchProduct=true
+      },
+      (error)=>{
+        console.log('====================================');
+        console.log(error);
+        console.log('====================================');
+      }      
+    )
+  }
+
+
 
 
 

@@ -25,6 +25,10 @@ export class APISERVICEService {
     return this.http.get(`${URL.AllProductMicroservice}/get-particular-restaurant-products/${id}`)
   }
 
+  getSearchProduct(keyword:String){
+    return this.http.get(`${URL.AllProductMicroservice}/search-product/${keyword}`);
+  }
+
 
 
   /*********************** AUTHENTICATION CONTROLLER ************************************/
