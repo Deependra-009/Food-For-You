@@ -148,3 +148,9 @@
     font-family: 'Times New Roman', Times, serif;
     color: red;
 }
+/* ********************* Dialog Box Style ******************************************* */
+.dialog{
+    color: red;
+    font-size: 10px;
+}
+

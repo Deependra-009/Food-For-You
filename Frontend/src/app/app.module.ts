@@ -43,6 +43,9 @@ import { EditDetailComponent } from './Pages/edit-detail/edit-detail.component';
 import { ChangePasswordComponent } from './Pages/change-password/change-password.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ProductSearchPageComponent } from './Pages/product-search-page/product-search-page.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
+
 
 @NgModule({
   declarations: [
@@ -80,6 +83,7 @@ import { ProductSearchPageComponent } from './Pages/product-search-page/product-
     MatTableModule,
     MatInputModule,
     MatSnackBarModule,
+    MatDialogModule,
     MatTabsModule,
     MatStepperModule,
     HttpClientModule,

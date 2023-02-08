@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { APISERVICEService } from 'src/app/Service/api-service.service';
+import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-product-search-page',
@@ -8,6 +10,7 @@ import { APISERVICEService } from 'src/app/Service/api-service.service';
   styleUrls: ['./product-search-page.component.css']
 })
 export class ProductSearchPageComponent implements OnInit {
+
 
   Inspiration_Your_First_Order_Data=[
     {
@@ -60,6 +63,7 @@ export class ProductSearchPageComponent implements OnInit {
   constructor(
     private route:Router,
     private apiService:APISERVICEService,
+    public dialog: MatDialog
   ) { }
 
 
@@ -73,15 +77,33 @@ export class ProductSearchPageComponent implements OnInit {
         this.isSearchProduct=true
       },
       (error)=>{
-        console.log('====================================');
         console.log(error);
-        console.log('====================================');
+        
       }      
     )
   }
 
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialog);
 
-
-
+  }
 
 }
+
+@Component({
+  selector: 'product-details-dialog-box',
+  templateUrl: './product-dialog-box.html',
+  styleUrls: ['./product-search-page.component.css']
+})
+export class DialogOverviewExampleDialog {
+  constructor(
+    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
+  ) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+}
+
+
+
