@@ -9,7 +9,7 @@ import jakarta.transaction.Transactional;
 public class AllProductMicroserviceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AllProductMicroserviceApplication.class, args);
+		SpringApplication.run(AllProductMicroserviceApplication.class);
 	}
 
 }
