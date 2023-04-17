@@ -37,12 +37,12 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
 
     this.LoginData = new FormGroup({
-      'email': new FormControl("deependra@gmail.com", [Validators.required, Validators.email]),
-      'password': new FormControl('12345', Validators.required)
+      'email': new FormControl('', [Validators.required, Validators.email]),
+      'password': new FormControl('', Validators.required)
     });
 
     this.ForgetLoginData = new FormGroup({
-      'email': new FormControl("deependra@gmail.com", [Validators.required, Validators.email]),
+      'email': new FormControl('', [Validators.required, Validators.email]),
       'userotp': new FormControl('', Validators.required),
       'systemotp': new FormControl('', Validators.required)
 
@@ -149,9 +149,14 @@ export class LoginPageComponent implements OnInit {
 
   step1function() {
 
-    this.apiService.getForgetPasswordData(this.LoginData.value).subscribe((data: any) => {
+    console.log('====================================');
+    console.log(this.ForgetLoginData.value);
+    console.log('====================================');
+
+
+    this.apiService.getForgetPasswordData(this.ForgetLoginData.value).subscribe((data: any) => {
       if (data != null) {
-        // console.log(data);
+        console.log(data);
         this.steps=2;
         setTimeout(()=>{
           this.apiService.sendOTP(data.email).subscribe((otpdata: any) => {

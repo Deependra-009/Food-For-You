@@ -18,8 +18,9 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
 
-
+@Slf4j
 @Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 	
@@ -38,27 +39,22 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 		String email=null;
 		String token=null;
 		
-		System.out.println("outsidefilter=>"+requestTokenHeader);
+		log.info("JwtAuthenticationFilter | Token"+requestTokenHeader);
 		
 		if(requestTokenHeader!=null && requestTokenHeader.startsWith("Bearer ")) {
 			
 			token=requestTokenHeader.substring(7);
 			try {
 				
-				
 				email=this.jwtUtil.getUsernameFromToken(token);
-				System.out.println("filter=>"+email);
-				
-				
-				
 				
 			}catch(Exception e) {
-				e.printStackTrace();
-				
+				e.printStackTrace();	
 			}
 			
 			// security
 			
+			log.info("JwtAuthenticationFilter | If user is found");
 			UserDetails userDetails = this.customUserDetailsService.loadUserByUsername(email);
 			
 			if(email!=null && SecurityContextHolder.getContext().getAuthentication()==null) {

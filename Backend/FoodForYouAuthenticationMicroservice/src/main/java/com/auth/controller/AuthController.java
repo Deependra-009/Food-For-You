@@ -29,6 +29,7 @@ import com.auth.helper.JwtResponse;
 import com.auth.helper.JwtUtil;
 import com.auth.modal.CartModel;
 import com.auth.modal.ForgetPasswordDTO;
+import com.auth.modal.ForgetPasswordRequestDTO;
 import com.auth.modal.MessageDTO;
 import com.auth.modal.UserModal;
 import com.auth.service.CartService;
@@ -52,6 +53,11 @@ public class AuthController {
 	
 	@Autowired
 	private CustomUserDetailsService customUserDetailsService;
+	
+	@GetMapping("/test")
+	public String test() {
+		return "test successfully";
+	}
 	
 	
 	
@@ -94,10 +100,8 @@ public class AuthController {
 		Collection<? extends GrantedAuthority> authority=userDetails.getAuthorities();
 		
 	
-		System.out.println("==>>>>"+userDetails);
 		
 		return ResponseEntity.ok(new JwtResponse(token,username,password,authority,true));
-//		return null;
 		
 		
 	}
@@ -149,11 +153,11 @@ public class AuthController {
 	
 	
 	@PostMapping("/forget-password")
-	public ResponseEntity<UserModal> getForgetPasswordData(@RequestBody UserModal data) throws Exception{
-		System.out.println("forget password");
-		System.out.println("---->"+data.getEmail());
+	public ResponseEntity<UserModal> getForgetPasswordData(@RequestBody ForgetPasswordRequestDTO data) throws Exception{
+//		System.out.println("forget password");
+//		System.out.println("---->"+data);
 		UserModal userdata=getUserData(data.getEmail(),true);
-		System.out.println("=>"+userdata);
+//		System.out.println("=>"+userdata);
 		if(userdata==null) throw new Exception("User Not Found");
 		return new ResponseEntity<UserModal>(userdata,HttpStatus.OK);
 	}

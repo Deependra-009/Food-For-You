@@ -28,7 +28,8 @@ public class MySecurityConfig {
 			"/authentication/user-register",
 			"/authentication/forget-password",
 			"/authentication/send-otp/{email}",
-			"/authentication/update-forget-password"
+			"/authentication/update-forget-password",
+			"/authentication/test"
 //			"/authentication/get-user-data/{email}"
 			
 	};

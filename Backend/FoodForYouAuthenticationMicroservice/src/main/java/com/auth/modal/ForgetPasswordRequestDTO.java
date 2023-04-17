@@ -9,11 +9,11 @@ import lombok.ToString;
 @Setter
 @AllArgsConstructor
 @ToString
-public class ForgetPasswordDTO {
+public class ForgetPasswordRequestDTO {
 	
-	
-	private String otp;
 	private String email;
+	private String systemotp;
+	private String userotp;
+	
 
 }
-

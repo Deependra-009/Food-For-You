@@ -15,7 +15,6 @@ public class CustomUserDetails implements UserDetails  {
 	
 	public CustomUserDetails(UserModal user) {
 		this.user=user;
-		System.out.println("=>"+user.getAddress());
 	}
 	
 	
