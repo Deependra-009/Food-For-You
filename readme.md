@@ -2,7 +2,7 @@
 <h4>Version: 1.0.1</h4>
 <br>
 
-Website Link:&nbsp; <a href="https://food-for-you-deploy-85eee.web.app/">FoodForYou.com</a> 
+Website Link:&nbsp; <a href="https://food-for-you-deploy-85eee.web.app/" target="_blank">FoodForYou.com</a> 
   <br><br>
 <h5> OPEN IN Desktop Mode because some pages are not responsive</h5>
   <b>Disclaimer:</b> &nbsp;<i>Only Frontend deploy.So, You cannot access restaurant data,product data and not able to so some functionalities like login,register etc</i>.  
