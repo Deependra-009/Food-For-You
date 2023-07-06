@@ -8,6 +8,8 @@ Website Link:&nbsp; <a href="https://food-for-you-deploy-85eee.web.app/" target=
   <b>Disclaimer:</b> &nbsp;<i>Only Frontend deploy.So, You cannot access restaurant data,product data and not able to so some functionalities like login,register etc</i>.  
 <hr>
 
+<h1>Full Project Download: Connect to Me ( deependra04trivedi@gmail.com )</h1>
+
 <ul>
   <li>It is full stack project</li>
   <li>In this project where user order online our favourite food or meal from  many restaurants</li>
