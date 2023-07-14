@@ -72,8 +72,6 @@ export class OrderFoodOnlineComponent implements OnInit {
  
     
     observer$[0].subscribe((data)=>{
-      console.log(data);
-      
       this.Data=data;
       
     })

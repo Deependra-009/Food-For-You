@@ -74,8 +74,6 @@ export class ProductSearchPageComponent implements OnInit {
     this.apiService.getSearchProduct(key).subscribe(
       (data:any)=>{
         this.SearchProductData=data;
-        console.log(data);
-        
         this.isSearchProduct=true
       },
       (error)=>{
