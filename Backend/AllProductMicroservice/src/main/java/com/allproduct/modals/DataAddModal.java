@@ -15,6 +15,6 @@ import lombok.ToString;
 @ToString
 public class DataAddModal {
 	
-	Set<ProductModal> data;
+	Set<RequestDataModel> data;
 
 }

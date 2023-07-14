@@ -3,6 +3,7 @@ package com.allproduct.modals;
 import java.util.List;
 import java.util.Set;
 
+import lombok.*;
 import org.springframework.data.convert.WritingConverter;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -18,11 +19,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 @Entity
 @Table(name="RestaurantTable")
@@ -30,7 +26,6 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 public class RestaurantModal {
 	
 	@Id
