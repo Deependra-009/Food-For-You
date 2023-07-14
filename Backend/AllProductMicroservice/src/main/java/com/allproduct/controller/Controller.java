@@ -4,8 +4,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import com.allproduct.modals.RequestDataModel;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -52,17 +50,14 @@ public class Controller {
 
 	}
 	
-	@GetMapping("/get-all-product")
+	@GetMapping("get-all-product")
 	private List<ProductModal> getAllProduct(){
 		return this.productService.getAllProduct();
 	}
 	
-	@GetMapping("/get-all-restaurant")
+	@GetMapping("get-all-restaurant")
 	private List<RestaurantModal> getAllRestaurant(){
-		System.out.println("restaurant");
-		List<RestaurantModal> response=this.restaurantService.getAllRestaurant();
-		System.out.println("response"+response);
-		return response;
+		return this.restaurantService.getAllRestaurant();
 	}
 	
 	@GetMapping("/get-particular-restaurant-products/{restuarant_id}")
@@ -77,36 +72,18 @@ public class Controller {
 	
 	//************* temp *******************************/
 	@PostMapping("/add-product-restaurant")
-	private String addAllProduct(@RequestBody DataAddModal datamodel) {
-
-		for(RequestDataModel data:datamodel.getData()){
-
-			Set<ProductModal> productModal=data.getProducts();
-			RestaurantModal restaurantModal= new RestaurantModal();
-			BeanUtils.copyProperties(data,restaurantModal);
-			RestaurantModal res=this.addRestaurant(restaurantModal);
-
-			for(ProductModal pm:productModal){
-				pm.setRestaurant(res);
-				this.productService.addProduct(pm);
-			}
-
+	private String addAllProduct(@RequestBody DataAddModal restaurant) {
+		System.out.println(restaurant);
+		Set<ProductModal> product=restaurant.getData();
+		System.out.println(product);
+		RestaurantModal rm=new RestaurantModal();
+		rm.setRestaurant_id(152);
+		
+		for(ProductModal item:product) {
+			item.setRestaurant(rm);
+			this.productService.addProduct(item);
 		}
-
-
-
-
-
-//		Set<ProductModal> product=restaurant.getProducts();
-//		System.out.println(product);
-//		RestaurantModal rm=new RestaurantModal();
-//		rm.setRestaurant_id(152);
-//
-//		for(ProductModal item:product) {
-//			item.setRestaurant(rm);
-//			this.productService.addProduct(item);
-//		}
-//
+		
 		return "data added";
 	}
 	
