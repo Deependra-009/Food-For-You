@@ -1,4 +1,5 @@
 <h1><i>Food For You</i></h1>
+<h3>Full Project Download: Connect with Me ( deependra04trivedi@gmail.com )</h3>
 <h4>Version: 1.0.1</h4>
 <br>
 
@@ -8,7 +9,7 @@ Website Link:&nbsp; <a href="https://food-for-you-deploy-85eee.web.app/" target=
   <b>Disclaimer:</b> &nbsp;<i>Only Frontend deploy.So, You cannot access restaurant data,product data and not able to so some functionalities like login,register etc</i>.  
 <hr>
 
-<h3>Full Project Download: Connect with Me ( deependra04trivedi@gmail.com )</h3>
+
 
 <hr>
 
